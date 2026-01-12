@@ -1,16 +1,22 @@
-@use "variables" as *;
 
-* {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background-color: $sabbia;
-  color: $testo;
+  min-width: 320px;
+  min-height: 100vh;
+  display: block;  
 }
+
+
+
 
 img {
   max-width: 100%;

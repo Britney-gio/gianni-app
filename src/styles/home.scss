@@ -1,0 +1,82 @@
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero,
+.alert,
+.footer {
+  margin-bottom: 3rem;
+}
+
+.prodotti {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.carosello {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-viewport {
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+}
+
+.freccia {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: white;
+  border: 1px solid #ddd;
+
+  width: 70px;
+  height: 70px;
+
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.freccia.sx {
+  left: -10px;
+}
+
+.freccia.dx {
+  right: -10px;
+}
+
+.lista-prodotti {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.prodotto-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}

@@ -1,13 +1,31 @@
 import React from "react";
 import { listaProdotti } from "../data/listaProdotti";
 import { useNavigate } from "react-router-dom";
+import "../styles/home.scss";
+import { useRef } from "react";
 
 export default function Home() {
   const navigate = useNavigate();
 
+  const carouselRef = useRef<HTMLUListElement>(null);
+
+  const scrollNext = () => {
+    carouselRef.current?.scrollBy({
+      left: carouselRef.current.offsetWidth,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollPrev = () => {
+    carouselRef.current?.scrollBy({
+      left: -carouselRef.current.offsetWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <main>
-      <header>
+    <main className="page">
+      <header className="hero">
         <h1>Benvenuto nell'e-commerce innovativo di Gianni</h1>
         <h2>Dalla terra di Sicilia alla blockchain Ethereum</h2>
 
@@ -36,40 +54,50 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
+      <section className="prodotti">
         <h2>I prodotti della nostra terra:</h2>
         <p>
           Tutti i prodotti provengono dai campi di Gianni, situati in Sicilia,
           coltivati e curati con metodi biologici e sostenibili da lui e dalla
           sua famiglia.
         </p>
+        <div className="carosello">
+          <button className="freccia sx" onClick={scrollPrev}>
+            ‹
+          </button>
 
-        <ul>
-          {listaProdotti.map((prodotto) => (
-            <li key={prodotto.id}>
-              <h3>{prodotto.nome}</h3>
-              <p>{prodotto.descrizione}</p>
-              <p>Origine: {prodotto.origine}</p>
-              <p>
-                <strong>Prezzo:</strong> {prodotto.prezzo}
-              </p>
-              <img src={prodotto.immagine} alt={prodotto.nome} />
-              <button
-                onClick={() =>
-                  navigate("/checkout/", {
-                    state: { prodotto },
-                  })
-                }
-              >
-                Procedi all acquisto
-              </button>
-            </li>
-          ))}
-        </ul>
+          <div className="carosello-viewport">
+            <ul className="lista-prodotti" ref={carouselRef}>
+              {listaProdotti.map((prodotto) => (
+                <li key={prodotto.id} className="prodotto-card">
+                  <h3>{prodotto.nome}</h3>
+                  <p>{prodotto.descrizione}</p>
+                  <p>Origine: {prodotto.origine}</p>
+                  <p>
+                    <strong>Prezzo:</strong> {prodotto.prezzo}
+                  </p>
+                  <img src={prodotto.immagine} alt={prodotto.nome} />
+                  <button
+                    onClick={() =>
+                      navigate("/checkout/", {
+                        state: { prodotto },
+                      })
+                    }
+                  >
+                    Procedi all acquisto
+                  </button>
+                </li>
+              ))}
+            </ul>
+           </div> 
+          <button className="freccia dx" onClick={scrollNext}>
+            ›
+          </button>
+        </div>
       </section>
 
       {/*FOOTER*/}
-      <footer>
+      <footer className="footer">
         <p>Grazie per aver scelto un’agricoltura sostenibile e trasparente.</p>
         <p>Lo staff dell’azienda agricola di Gianni</p>
         <img src="" alt="" />
