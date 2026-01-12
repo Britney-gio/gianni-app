@@ -1,6 +1,11 @@
+import React from "react";
 import { listaProdotti } from "../data/listaProdotti";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
   return (
     <div>
         <h1>Benvenuto nell'e-commerce innovativo di Gianni</h1>
@@ -18,7 +23,13 @@ export default function Home() {
             <p>Origine: {prodotto.origine}</p>
             <p><strong>Prezzo:</strong> {prodotto.prezzo}</p>
             <img src={prodotto.immagine} alt={prodotto.nome} />
-            <button>Procedi all'acquisto</button>
+            <button onClick={() =>
+                navigate("/checkout/", {
+                    state: { prodotto },
+                })
+            }>
+            Procedi all acquisto
+            </button>
             </li>
         ))}
       </ul>

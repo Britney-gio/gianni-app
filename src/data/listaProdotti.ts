@@ -3,7 +3,7 @@ import type { Prodotti } from "../types/prodotti";
 export const listaProdotti: Prodotti[] = [
   {
     id: "1",
-    nome: "Olio extravergine d'oliva",
+    nome: "1Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
     origine: "Sicilia",
@@ -12,7 +12,7 @@ export const listaProdotti: Prodotti[] = [
   },
   {
     id: "2",
-    nome: "Olio extravergine d'oliva",
+    nome: "2Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
     origine: "Sicilia",
@@ -21,7 +21,7 @@ export const listaProdotti: Prodotti[] = [
   },
   {
     id: "3",
-    nome: "Olio extravergine d'oliva",
+    nome: "3Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
     origine: "Sicilia",
@@ -30,7 +30,7 @@ export const listaProdotti: Prodotti[] = [
   },
   {
     id: "4",
-    nome: "Olio extravergine d'oliva",
+    nome: "4Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
     origine: "Sicilia",

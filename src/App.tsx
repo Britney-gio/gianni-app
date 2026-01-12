@@ -8,12 +8,12 @@ export default function App() {
     <>
       <nav style={{ display: "flex", gap: 12 }}>
         <Link to="/">Home</Link>
-        <Link to="/acquisto">Acquisto</Link>
+        <Link to="/checkout">Acquisto</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/acquisto" element={<Checkout />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
