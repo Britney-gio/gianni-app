@@ -1,8 +1,8 @@
-import { Prodotti } from "../types/prodotti";
+import type { Prodotti } from "../types/prodotti";
 
 export const listaProdotti: Prodotti[] = [
-    {
-    id: "olio-extravergine",
+  {
+    id: "1",
     nome: "Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
@@ -11,7 +11,7 @@ export const listaProdotti: Prodotti[] = [
     immagine: "https://placehold.co/300x200",
   },
   {
-    id: "olio-extravergine",
+    id: "2",
     nome: "Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
@@ -20,7 +20,7 @@ export const listaProdotti: Prodotti[] = [
     immagine: "https://placehold.co/300x200",
   },
   {
-    id: "olio-extravergine",
+    id: "3",
     nome: "Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
@@ -29,7 +29,7 @@ export const listaProdotti: Prodotti[] = [
     immagine: "https://placehold.co/300x200",
   },
   {
-    id: "olio-extravergine",
+    id: "4",
     nome: "Olio extravergine d'oliva",
     descrizione:
       "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
@@ -37,5 +37,4 @@ export const listaProdotti: Prodotti[] = [
     prezzo: "0.05 ETH",
     immagine: "https://placehold.co/300x200",
   },
-
 ];

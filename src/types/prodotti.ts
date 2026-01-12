@@ -6,3 +6,4 @@ export interface Prodotti {
   prezzo: string;
   immagine: string;
 }
+
