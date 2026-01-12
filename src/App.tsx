@@ -1,11 +1,22 @@
-import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
+import NotFound from "./pages/NotFound";
 
-function App() {
+export default function App() {
   return (
     <>
-      <h1>Hello world!</h1>
+      <nav style={{ display: "flex", gap: 12 }}>
+        <Link to="/">Home</Link>
+        <Link to="/acquisto">Acquisto</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/acquisto" element={<Checkout />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
 
-export default App;
