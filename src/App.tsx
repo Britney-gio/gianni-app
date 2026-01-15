@@ -6,7 +6,7 @@ import NotFound from "./pages/NotFound";
 export default function App() {
   return (
     <>
-      <nav style={{ display: "flex", gap: 12 }}>
+      <nav className="app-nav">
         <Link to="/">Home</Link>
         <Link to="/checkout">Acquisto</Link>
       </nav>

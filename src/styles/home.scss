@@ -1,24 +1,45 @@
 .page {
+  width: 100%;
   max-width: 680px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.25rem 3rem;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 2.5rem;
   text-align: center;
+  font-size: 0.95rem;
 }
 
 .hero,
 .alert,
 .footer {
-  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.hero h1,
+.hero h2 {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.hero h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 500;
+}
+
+.hero p,
+.alert p,
+.footer p {
+  color: #2f2f2f;
+  font-size: 0.95rem;
 }
 
 .prodotti {
   width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
 }
 
 .carosello {
@@ -26,11 +47,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.5rem 0;
 }
 
-.carousel-viewport {
+.carosello-viewport {
   width: 100%;
-  max-width: 360px;
   overflow: hidden;
 }
 
@@ -39,22 +60,39 @@
   top: 50%;
   transform: translateY(-50%);
 
-  background: white;
+  background: #ffffff;
   border: 1px solid #ddd;
+  border-radius: 999px;
 
-  width: 70px;
-  height: 70px;
+  width: 38px;
+  height: 38px;
 
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.freccia:hover {
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
+.freccia:focus,
+.freccia:focus-visible {
+  outline: 3px solid rgba(107, 142, 35, 0.4);
+  outline-offset: 2px;
 }
 
 .freccia.sx {
-  left: -10px;
+  left: -6px;
 }
 
 .freccia.dx {
-  right: -10px;
+  right: -6px;
 }
 
 .lista-prodotti {
@@ -63,20 +101,46 @@
   margin: 0;
 
   display: flex;
-  overflow: hidden;
-  width: 100%;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lista-prodotti::-webkit-scrollbar {
+  height: 6px;
+}
+
+.lista-prodotti::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
 }
 
 .prodotto-card {
-  flex: 0 0 100%;
-  max-width: 100%;
+  flex: 0 0 85%;
+  max-width: 85%;
+  min-height: 100%;
 
   padding: 1.5rem;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+
+  scroll-snap-align: center;
+}
+
+.prodotto-card img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.prodotto-card button {
+  width: 100%;
 }
