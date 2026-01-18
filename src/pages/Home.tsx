@@ -1,9 +1,19 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { listaProdotti } from "../data/listaProdotti";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.scss";
+import { createHeliaNode } from "../ipfs/helia";
 
 export default function Home() {
+  useEffect(() => {
+    const initHelia = async () => {
+      const helia = await createHeliaNode();
+      console.log("Helia node avviato:", helia);
+    };
+
+    initHelia();
+  }, []);
+
   const navigate = useNavigate();
 
   const [isAlertOpen, setIsAlertOpen] = useState(false);
