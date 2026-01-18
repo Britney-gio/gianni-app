@@ -3,38 +3,38 @@ import type { Prodotti } from "../types/prodotti";
 export const listaProdotti: Prodotti[] = [
   {
     id: "1",
-    nome: "1Olio extravergine d'oliva",
+    nome: "Limoni di Siracusa",
     descrizione:
-      "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
-    origine: "Sicilia",
-    prezzo: "0.05 ETH",
-    immagine: "https://placehold.co/300x200",
+      "Limoni profumati e ricchi di succo, coltivati sotto il sole caldo della costa siracusana. Raccolti a mano e non trattati, ideali per cucina, dolci e bevande naturali.",
+    origine: "Siracusa (SR)",
+    prezzo: "0.001 ETH",
+    immagine: "../src/img/limone-sr.jpg",
   },
   {
     id: "2",
-    nome: "2Olio extravergine d'oliva",
+    nome: "Arance Tarocco di Catania",
     descrizione:
-      "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
-    origine: "Sicilia",
-    prezzo: "0.05 ETH",
-    immagine: "https://placehold.co/300x200",
+      "Arance Tarocco a polpa rossa, dolci e succose, coltivate nella Piana di Catania. Un agrume tipico siciliano, apprezzato per il suo equilibrio tra dolcezza e acidità.",
+    origine: "Catania (CT)",
+    prezzo: "0.001 ETH",
+    immagine: "../src/img/arance-ct.jpeg",
   },
   {
     id: "3",
-    nome: "3Olio extravergine d'oliva",
+    nome: "Fichi D'india dei Paesi Etnei",
     descrizione:
-      "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
-    origine: "Sicilia",
-    prezzo: "0.05 ETH",
-    immagine: "https://placehold.co/300x200",
+      "Fichi d'India colorati maturati al sole sul particolare terreno del vulcano Etna, dal sapore intenso e naturale. Frutti simbolo della Sicilia, coltivati senza trattamenti chimici.",
+    origine: "Etna (CT)",
+    prezzo: "0.001 ETH",
+    immagine: "../src/img/fichi d'india-ct.jpg",
   },
   {
     id: "4",
-    nome: "4Olio extravergine d'oliva",
+    nome: "Mandorle di Avola",
     descrizione:
-      "Olio biologico ottenuto da olive coltivate nei campi di Gianni, secondo tradizione siciliana.",
-    origine: "Sicilia",
-    prezzo: "0.05 ETH",
-    immagine: "https://placehold.co/300x200",
+      "Pregiate mandorle di Avola, famose nel mondo per il loro aroma delicato e la consistenza croccante. Ideali per dolci tradizionali siciliani e consumo naturale.",
+    origine: "Avola (SR)",
+    prezzo: "0.001 ETH",
+    immagine: "../src/img/mandorle-avola.jpg",
   },
 ];
