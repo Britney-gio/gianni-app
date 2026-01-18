@@ -63,7 +63,7 @@ export default function Home() {
         </p>
         <div className="carosello">
           <button className="freccia sx" onClick={scrollPrev}>
-            {"<"}
+            {"←"}
           </button>
 
           <div className="carosello-viewport">
@@ -89,9 +89,9 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-           </div> 
+          </div>
           <button className="freccia dx" onClick={scrollNext}>
-            {">"}
+            {"→"}
           </button>
         </div>
       </section>
