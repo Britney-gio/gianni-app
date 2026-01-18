@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { listaProdotti } from "../data/listaProdotti";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.scss";
@@ -12,10 +12,6 @@ export default function Home() {
     "Questa scelta non rappresenta solo un'innovazione tecnologica, ma anche una scelta ecologica. I token ERC-20 costituiscono un metodo digamento a basso impatto ambientale, poiché non richiedono la stampa di denaro fisico e riducono le emissioni legate alla sua produzione e gestione.";
 
   const carouselRef = useRef<HTMLUListElement>(null);
-
-  useLayoutEffect(() => {
-    setIsAlertOpen(false);
-  }, []);
 
   const scrollNext = () => {
     carouselRef.current?.scrollBy({
