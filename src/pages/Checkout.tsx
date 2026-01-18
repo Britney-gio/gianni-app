@@ -37,6 +37,12 @@ export default function Checkout() {
         </p>
         <button type="button">Conferma Acquisto</button>
       </section>
+
+      <footer className="footer">
+        <p>Grazie per aver scelto un’agricoltura sostenibile e trasparente.</p>
+        <p>Lo staff dell’azienda agricola di Gianni</p>
+        <img src="" alt="" />
+      </footer>
     </main>
   );
 }
