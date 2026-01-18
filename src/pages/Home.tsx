@@ -1,19 +1,9 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { listaProdotti } from "../data/listaProdotti";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.scss";
-import { createHeliaNode } from "../ipfs/helia";
 
 export default function Home() {
-  useEffect(() => {
-    const initHelia = async () => {
-      const helia = await createHeliaNode();
-      console.log("Helia node avviato:", helia);
-    };
-
-    initHelia();
-  }, []);
-
   const navigate = useNavigate();
 
   const [isAlertOpen, setIsAlertOpen] = useState(false);
@@ -133,8 +123,8 @@ export default function Home() {
 
       {/*FOOTER*/}
       <footer className="footer">
-        <p>Grazie per aver scelto un’agricoltura sostenibile e trasparente.</p>
-        <p>Lo staff dell’azienda agricola di Gianni</p>
+        <p>Grazie per aver scelto un'agricoltura sostenibile e trasparente.</p>
+        <p>Lo staff dell'azienda agricola di Gianni</p>
         <img src="../src/img/img-footer.jpg" alt="campo Gianni vista Etna" />
       </footer>
     </main>
