@@ -7,6 +7,9 @@ import { useRef } from "react";
 export default function Home() {
   const navigate = useNavigate();
 
+  const alertMessage: string =
+    "Questa scelta non rappresenta solo un'innovazione tecnologica, ma anche una scelta ecologica. I token ERC-20 costituiscono un metodo digamento a basso impatto ambientale, poiché non richiedono la stampa di denaro fisico e riducono le emissioni legate alla sua produzione e gestione.";
+
   const carouselRef = useRef<HTMLUListElement>(null);
 
   const scrollNext = () => {
@@ -42,17 +45,13 @@ export default function Home() {
         </p>
       </header>
 
-      {/*ALERT*/}
-      <section className="alert">
-        <h3>Perchè questa scelta ?</h3>
-        <p>
-          Questa scelta non rappresenta solo un’innovazione tecnologica, ma
-          anche una scelta ecologica. I token ERC-20 costituiscono un metodo di
-          pagamento a basso impatto ambientale, poiché non richiedono la stampa
-          di denaro fisico e riducono le emissioni legate alla sua produzione e
-          gestione.
-        </p>
-      </section>
+      <button
+        className="alert-button"
+        type="button"
+        onClick={() => alert(alertMessage)}
+      >
+        Perchè questa scelta ?
+      </button>
 
       <section className="prodotti">
         <h2>I prodotti della nostra terra:</h2>

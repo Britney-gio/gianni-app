@@ -12,7 +12,6 @@
 }
 
 .hero,
-.alert,
 .footer {
   text-align: center;
 }
@@ -32,13 +31,16 @@
 }
 
 .hero p,
-.alert p,
 .footer p {
   color: #2f2f2f;
   font-size: 0.95rem;
 }
 
 .prodotti {
+  width: 100%;
+}
+
+.alert-button {
   width: 100%;
 }
 
