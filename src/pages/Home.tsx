@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { listaProdotti } from "../data/listaProdotti";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.scss";
-import { useRef } from "react";
 
 export default function Home() {
   const navigate = useNavigate();
+
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
 
   const alertMessage: string =
     "Questa scelta non rappresenta solo un'innovazione tecnologica, ma anche una scelta ecologica. I token ERC-20 costituiscono un metodo digamento a basso impatto ambientale, poiché non richiedono la stampa di denaro fisico e riducono le emissioni legate alla sua produzione e gestione.";
@@ -48,10 +49,51 @@ export default function Home() {
       <button
         className="alert-button"
         type="button"
-        onClick={() => alert(alertMessage)}
+        onClick={() => setIsAlertOpen(true)}
       >
-        Perchè questa scelta ?
+        Perchè questa scelta?
       </button>
+      {isAlertOpen && (
+        <div
+          className="alert-overlay"
+          role="presentation"
+          onClick={() => setIsAlertOpen(false)}
+        >
+          <div
+            className="alert-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="alert-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <h3 id="alert-title">Perchè questa scelta?</h3>
+            <p>{alertMessage}</p>
+            <button type="button" onClick={() => setIsAlertOpen(false)}>
+              Chiudi
+            </button>
+          </div>
+        </div>
+      )}
+      <div
+        className="alert-overlay"
+        role="presentation"
+        onClick={() => setIsAlertOpen(false)}
+      >
+        <div
+          className="alert-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="alert-title"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <h3 id="alert-title">Perchè questa scelta?</h3>
+          <p>{alertMessage}</p>
+          <button type="button" onClick={() => setIsAlertOpen(false)}>
+            Chiudi
+          </button>
+        </div>
+      </div>
+      
 
       <section className="prodotti">
         <h2>I prodotti della nostra terra:</h2>

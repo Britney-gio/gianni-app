@@ -1,9 +1,11 @@
 import React from "react";
-import { useLocation, Navigate } from "react-router-dom";
+import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import type { Prodotti } from "../types/prodotti";
+import "../styles/home.scss";
 
 export default function Checkout() {
   const location = useLocation();
+  const navigate = useNavigate();
   const prodotto = location.state?.prodotto as Prodotti | undefined;
 
   if (!prodotto) {
@@ -11,16 +13,30 @@ export default function Checkout() {
   }
 
   return (
-    <div>
-      <h1>Checkout</h1>
-      <img src={prodotto.immagine} alt={prodotto.nome} />
-      <h2>{prodotto.nome}</h2>
-      <p>{prodotto.descrizione}</p>
-      <p>Origine: {prodotto.origine}</p>
-      <p>
-        <strong>Prezzo:</strong> {prodotto.prezzo}
-      </p>
-      <button>Conferma Acquisto</button>
-    </div>
+    <main className="page">
+      <header className="hero">
+        <h1>Checkout</h1>
+        <p>Rivedi i dettagli e conferma il tuo ordine.</p>
+      </header>
+
+      <button
+        className="alert-button"
+        type="button"
+        onClick={() => navigate("/")}
+      >
+        Home
+      </button>
+
+      <section className="prodotto-card checkout-card">
+        <img src={prodotto.immagine} alt={prodotto.nome} />
+        <h2>{prodotto.nome}</h2>
+        <p>{prodotto.descrizione}</p>
+        <p>Origine: {prodotto.origine}</p>
+        <p>
+          <strong>Prezzo:</strong> {prodotto.prezzo}
+        </p>
+        <button type="button">Conferma Acquisto</button>
+      </section>
+    </main>
   );
 }
