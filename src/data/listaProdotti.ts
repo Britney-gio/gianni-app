@@ -26,7 +26,7 @@ export const listaProdotti: Prodotti[] = [
       "Fichi d'India colorati maturati al sole sul particolare terreno del vulcano Etna, dal sapore intenso e naturale. Frutti simbolo della Sicilia, coltivati senza trattamenti chimici.",
     origine: "Etna (CT)",
     prezzo: "0.001 ETH",
-    immagine: "../src/img/fichi d'india-ct.jpg",
+    immagine: "../src/img/fichi-ct.jpg",
   },
   {
     id: "4",
