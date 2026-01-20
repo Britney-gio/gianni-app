@@ -18,7 +18,7 @@ export default function Checkout() {
 
   const handleConfirm = () => {
     if (!isConnected) {
-      open();
+      connect({ connector: injected() });
       return;
     }
 
@@ -53,7 +53,7 @@ export default function Checkout() {
         <button type="button" onClick={handleConfirm}>
           {isConnected
             ? "Conferma acquisto"
-            : "Connetti il tuo wallet e conferma acquisto"}
+            : "Connetti Metamask e conferma acquisto"}
         </button>
       </section>
 
