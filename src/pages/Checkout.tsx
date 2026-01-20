@@ -2,15 +2,29 @@ import React from "react";
 import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import type { Prodotti } from "../types/prodotti";
 import "../styles/home.scss";
+import { useAccount } from "wagmi";
+import { useAppKit } from "@reown/appkit/react";
 
 export default function Checkout() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { isConnected } = useAccount();
+  const { open } = useAppKit();
   const prodotto = location.state?.prodotto as Prodotti | undefined;
 
   if (!prodotto) {
     return <Navigate to="/" replace />;
   }
+
+  const handleConfirm = () => {
+    if (!isConnected) {
+      open();
+      return;
+    }
+
+    console.log("Acquisto confermato:", prodotto.nome);
+    alert("Wallet connesso. Qui partirà il pagamento.");
+  };
 
   return (
     <main className="page">
@@ -35,11 +49,16 @@ export default function Checkout() {
         <p>
           <strong>Prezzo:</strong> {prodotto.prezzo}
         </p>
-        <button type="button">Conferma Acquisto</button>
+
+        <button type="button" onClick={handleConfirm}>
+          {isConnected
+            ? "Conferma acquisto"
+            : "Connetti il tuo wallet e conferma acquisto"}
+        </button>
       </section>
 
       <footer className="footer">
-        <p>Grazie per aver scelto un’agricoltura sostenibile e trasparente.</p>
+        <p>Grazie per aver scelto un'agricoltura sostenibile e trasparente.</p>
         <p>Lo staff dell’azienda agricola di Gianni</p>
         <img src="../src/img/img-footer.jpg" alt="campo Gianni vista Etna" />
       </footer>
